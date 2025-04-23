@@ -10,3 +10,14 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return CustomUser.objects.create_user(**validated_data)
+
+class BecomeEmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ('is_employee',)
+        read_only_fields = ('email',)
+
+    def update(self, instance, validated_data):
+        instance.is_employee = True
+        instance.save()
+        return instance
