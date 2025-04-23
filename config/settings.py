@@ -44,7 +44,7 @@ INSTALLED_APPS += [
 
 INSTALLED_APPS += [
     'users.apps.UsersConfig',
-    #'restaurant.apps.RestaurantConfig'
+    'restaurant.apps.RestaurantConfig'
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
